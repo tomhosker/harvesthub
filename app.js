@@ -40,6 +40,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const favicon = require("express-favicon");
+const dotenv = require('dotenv').config();
 
 // Local imports.
 const indexRouter = require("./routes/index");
