@@ -44,6 +44,7 @@ const favicon = require("express-favicon");
 // Local imports.
 const indexRouter = require("./routes/index");
 const profileRouter = require("./routes/profile");
+const asIsRouter = require("./routes/asis");
 
 // Error codes.
 const notFound = 404;
@@ -81,6 +82,9 @@ app.use("/", indexRouter);
 app.use("/profile",
         require("connect-ensure-login").ensureLoggedIn(),
         profileRouter);
+app.use("/asis",
+        require("connect-ensure-login").ensureLoggedIn(),
+        asIsRouter);
 app.get("/login", function(req, res){ res.redirect("/"); });
 app.post("/login",
          passport.authenticate("local", { failureRedirect: "/login" }),
