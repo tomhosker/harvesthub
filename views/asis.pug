@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1 #{title}
-  p Herro!
+  h1=title
+
+  table
+    tr
+      for column in data.columns
+        th=column
+    for row in data.rows
+      tr
+        for item in row
+          td=item
