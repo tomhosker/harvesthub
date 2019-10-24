@@ -41,6 +41,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const favicon = require("express-favicon");
 const dotenv = require('dotenv').config();
+const { Client } = require("pg");
 
 // Local imports.
 const indexRouter = require("./routes/index");
