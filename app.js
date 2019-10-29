@@ -46,6 +46,7 @@ const dotenv = require('dotenv').config();
 const indexRouter = require("./routes/index");
 const profileRouter = require("./routes/profile");
 const asIsRouter = require("./routes/asis");
+const boxEyeComponentsRouter = require("./routes/boxeyecomponents");
 
 // Error codes.
 const notFound = 404;
@@ -86,6 +87,9 @@ app.use("/profile",
 app.use("/asis",
         require("connect-ensure-login").ensureLoggedIn(),
         asIsRouter);
+app.use("/boxeyecomponents",
+        require("connect-ensure-login").ensureLoggedIn(),
+        boxEyeComponentsRouter);
 app.get("/login", function(req, res){ res.redirect("/"); });
 app.post("/login",
          passport.authenticate("local", { failureRedirect: "/login" }),
