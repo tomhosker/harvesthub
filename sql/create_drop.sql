@@ -12,12 +12,6 @@ CREATE TABLE Grower
   fullName VARCHAR(999)
 );
 
--- Run me on the database for the HarvestHub app using:
---   heroku pg:psql --app harvesthub < dothething.sql
-
--- Remember that PostgreSQL will changes the names of columns, tables, etc
--- to all lower case unless quotation marks are used.
-
 DROP TABLE IF EXISTS BoxEyeRig;
 CREATE TABLE BoxEyeRig
 (
