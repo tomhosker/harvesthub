@@ -47,7 +47,7 @@ router.get("/antennalog/:id", function(req, res, next){
 
 // Return the page for a given non-log table.
 router.get("/:id", function(req, res, next){
-  scraper.fetchBoxEyeComponentLog(req, res);
+  scraper.fetchBoxEyeComponent(req, res);
 });
 
 module.exports = router;
