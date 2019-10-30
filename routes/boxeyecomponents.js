@@ -45,9 +45,19 @@ router.get("/antennalog/:id", function(req, res, next){
   scraper.fetchBoxEyeAntennaLog(req, res);
 });
 
-// Return the page for a given non-log table.
-router.get("/:id", function(req, res, next){
-  scraper.fetchBoxEyeComponent(req, res);
+// Return the page for all rigs.
+router.get("/boxeyerig", function(req, res, next){
+  scraper.fetchBoxEyeRig(req, res);
+});
+
+// Return the page for all Arduino readers.
+router.get("/arduinoreader", function(req, res, next){
+  scraper.fetchArduinoReader(req, res);
+});
+
+// Return the page for all antennae.
+router.get("/antenna", function(req, res, next){
+  scraper.fetchAntenna(req, res);
 });
 
 module.exports = router;
