@@ -40,7 +40,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const favicon = require("express-favicon");
-const dotenv = require('dotenv').config();
+const dotenv = require("dotenv").config();
 
 // Local imports.
 const indexRouter = require("./routes/index");
@@ -59,6 +59,8 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 if(app.get("env") === "development") app.locals.pretty = true;
+// Un-commenting the following makes the HTML output readable in all cases.
+app.locals.pretty = true;
 
 // Use application-level middleware for common functionality, including
 // parsing and session handling.
