@@ -60,4 +60,19 @@ router.get("/antenna", function(req, res, next){
   scraper.fetchAntenna(req, res);
 });
 
+// Return the page for uploading to the BoxEye rig table.
+router.get("/upload2/boxeyerig", function(req, res, next){
+  var theColumns = [{ code: "code", type: "text" },
+                    { arduinoReaderA: "arduinoReaderA", type: "text" },
+                    { arduinoReaderB: "arduinoReaderB", type: "text" },
+                    { antennaDexter: "arduinoDexter", type: "text" },
+                    { antennaSinister: "antennaSinister", type: "text" },
+                    { remarks: "remarks", type: "text" }];
+  var action = "/boxeyecomponents/insert2/boxeyerig";
+
+  properties = { title: "Upload to BoxEyeRig", columns: theColumns,
+                 formAction: action };
+  finaliser.protoRender(req, res, "upload2table", properties);
+});
+
 module.exports = router;
