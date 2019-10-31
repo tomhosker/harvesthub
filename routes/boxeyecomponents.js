@@ -67,7 +67,7 @@ router.get("/upload2/boxeyerig", function(req, res, next){
   var theColumns = [{ name: "code", type: "text" },
                     { name: "arduinoReaderA", type: "text" },
                     { name: "arduinoReaderB", type: "text" },
-                    { name: "arduinoDexter", type: "text" },
+                    { name: "antennaDexter", type: "text" },
                     { name: "antennaSinister", type: "text" },
                     { name: "remarks", type: "text" }];
   var action = "/boxeyecomponents/insert2/boxeyerig";
