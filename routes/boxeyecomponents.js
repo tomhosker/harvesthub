@@ -136,12 +136,14 @@ function passToUploader(req, res, tableName)
 // Ronseal.
 function appendToLog(req, res, tableName, idValue)
 {
-  var logName = "BoxEyeComponents."+tableName+"Log";
+  var logName = tableName+"Log";
+  var logNameWithSchema = "BoxEyeComponents."+logName;
   var idKey = tableName;
   var idValue = req.params.id;
   var redirect = "/boxeyecomponents/"+logName+"/"+idValue;
 
-  uploader.appendToLog(req, res, logName, idKey, idValue, redirect);
+  uploader.appendToLog(req, res, logNameWithSchema, idKey,
+                       idValue, redirect);
 }
 
 module.exports = router;
