@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 #{title}
+  p Welcome to the site's #[strong BoxEye Components] section.
+
+  h2 Browse Tables
+  ul
+    li #[a(href="/boxeyecomponents/BoxEyeRig") BoxEyeRig],
+    li #[a(href="/boxeyecomponents/ArduinoReader") ArduinoReader],
+    li #[a(href="/boxeyecomponents/Antenna") Antenna].
+  h2 Upload to Tables
+  ul
+    li #[a(href="/boxeyecomponents/upload2/BoxEyeRig") Upload to BoxEyeRig],
+    li #[a(href="/boxeyecomponents/upload2/ArduinoReader") Upload to ArduinoReader],
+    li #[a(href="/boxeyecomponents/upload2/Antenna") Upload to Antenna].
+  h2 Logs
+  ul
+    li #[a(href="/boxeyecomponents/BoxEyeRigLog") BoxEyeRigLog],
+    li #[a(href="/boxeyecomponents/ArduinoReaderLog") ArduinoReaderLog],
+    li #[a(href="/boxeyecomponents/AntennaLog") AntennaLog].

@@ -17,6 +17,12 @@ const scraper = new Scraper();
 const uploader = new Uploader();
 const finaliser = new Finaliser();
 
+// Return the section index.
+router.get("/", function(req, res, next){
+  finaliser.protoRender(req, res, "boxeyecomponents",
+                        { title: "BoxEye Components" });
+});
+
 // Return a list of all rig logs.
 router.get("/boxeyeriglog", function(req, res, next){
   scraper.fetchAllBoxEyeRigLog(req, res);
