@@ -118,6 +118,11 @@ router.post("/insert2/antenna", function(req, res, next){
   passToUploader(req, res, "BoxEyeComponents.Antenna");
 });
 
+// Add an entry to a BoxEye rig's log.
+router.post("/append2/boxeyerig/:id", function(req, res, next){
+  appendToLog(req, res, "BoxEyeRig");
+});
+
 // Pass control on to the Uploader object.
 function passToUploader(req, res, tableName)
 {
@@ -126,6 +131,17 @@ function passToUploader(req, res, tableName)
     uploader.update(req, res, tableName);
   }
   else uploader.insert(req, res, tableName);
+}
+
+// Ronseal.
+function appendToLog(req, res, tableName, idValue)
+{
+  var logName = tableName+"Log";
+  var idKey = tableName;
+  var idValue = req.params.id;
+  var redirect = "/boxeyecomponents/"+logName+"/"+idValue;
+
+  uploader.appendToLog(req, res, logName, idKey, idValue, redirect);
 }
 
 module.exports = router;
