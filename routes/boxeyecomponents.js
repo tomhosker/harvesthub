@@ -101,10 +101,8 @@ router.get("/upload2/antenna", function(req, res, next){
   finaliser.protoRender(req, res, "upload2table", properties);
 });
 
-console.log("Herro!");
 // Execute an upload to the BoxEye rig table.
 router.get("/insert2/boxeyerig", function(req, res, next){
-console.log("Dave!");
   passToUploader(req, res, "BoxEyeComponents.BoxEyeRig");
 });
 
