@@ -101,4 +101,29 @@ router.get("/upload2/antenna", function(req, res, next){
   finaliser.protoRender(req, res, "upload2table", properties);
 });
 
+// Execute an upload to the BoxEye rig table.
+router.get("/insert2/boxeyerig", function(req, res, next){
+  passToUploader(req, res, "BoxEyeComponents.BoxEyeRig");
+});
+
+// Execute an upload to the Arduino-reader table.
+router.get("/insert2/arduinoreader", function(req, res, next){
+  passToUploader(req, res, "BoxEyeComponents.ArduinoReader");
+});
+
+// Execute an upload to the antenna table.
+router.get("/insert2/antenna", function(req, res, next){
+  passToUploader(req, res, "BoxEyeComponents.Antenna");
+});
+
+// Pass control on to the Uploader object.
+function passToUploader(req, res, tableName)
+{
+  if(req.body.hasOwnProperty("update"))
+  {
+    uploader.update(req, res, tableName);
+  }
+  else uploader.insert(req, res, tableName);
+}
+
 module.exports = router;
