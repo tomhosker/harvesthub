@@ -75,4 +75,30 @@ router.get("/upload2/boxeyerig", function(req, res, next){
   finaliser.protoRender(req, res, "upload2table", properties);
 });
 
+// Return the page for uploading to the Arduino-reader table.
+router.get("/upload2/arduinoreader", function(req, res, next){
+  var theColumns = [{ name: "code", type: "text" },
+                    { name: "usbSerialNo", type: "text" },
+                    { name: "arduinoModel", type: "text" },
+                    { name: "readerModel", type: "text" },
+                    { name: "remarks", type: "text" }];
+  var action = "/boxeyecomponents/insert2/arduinoreader";
+
+  properties = { title: "Upload to ArduinoReader", columns: theColumns,
+                 formAction: action };
+  finaliser.protoRender(req, res, "upload2table", properties);
+});
+
+// Return the page for uploading to the antenna table.
+router.get("/upload2/antenna", function(req, res, next){
+  var theColumns = [{ name: "code", type: "text" },
+                    { name: "model", type: "text" },
+                    { name: "remarks", type: "text" }];
+  var action = "/boxeyecomponents/insert2/antenna";
+
+  properties = { title: "Upload to Antenna", columns: theColumns,
+                 formAction: action };
+  finaliser.protoRender(req, res, "upload2table", properties);
+});
+
 module.exports = router;
