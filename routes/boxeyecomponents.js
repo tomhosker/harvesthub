@@ -136,7 +136,7 @@ function passToUploader(req, res, tableName)
 // Ronseal.
 function appendToLog(req, res, tableName, idValue)
 {
-  var logName = tableName+"Log";
+  var logName = "BoxEyeComponents."+tableName+"Log";
   var idKey = tableName;
   var idValue = req.params.id;
   var redirect = "/boxeyecomponents/"+logName+"/"+idValue;
