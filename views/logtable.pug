@@ -3,6 +3,20 @@ extends layout
 block content
   h1 #{title}
 
+  h2 Item Data
+  if itemData == null
+    p #[i No such item matching key given above.]
+  else
+    table
+      tr
+        for column in itemData.columns
+          th !{column}
+      for row in itemData.rows
+        tr
+          for item in row
+            td !{item}
+
+  h2 The Logs
   if data == null
     p #[i This table contains no data as yet.]
   else
