@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  if data == null
+    p #[i This table contains no data as yet.]
+  else
+    table
+      tr
+        for column in data.columns
+          th !{column}
+      for row in data.rows
+        tr
+          for item in row
+            td !{item}
+
+  p !{note}
+
+  h2 Add New Entry
+  form(action=formAction, method="post")
+    p
+      | remarks:
+      br
+      textarea(name="remarks", required)
+    input(type="submit", value="Submit")
