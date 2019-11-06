@@ -50,7 +50,7 @@ router.get("/antennalog", function(req, res, next){
 
 // Return the page for an antenna log.
 router.get("/antennalog/:id", function(req, res, next){
-  scraper.fetchBoxEyeAntennaLog(req, res);
+  scraper.fetchAntennaLog(req, res);
 });
 
 // Return the page for all rigs.
