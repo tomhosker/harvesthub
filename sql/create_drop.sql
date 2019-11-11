@@ -11,7 +11,10 @@ CREATE TABLE Grower
   fullName VARCHAR(999)
 );
 
--- BoxEyeComponents stuff.
+----------------------------
+-- BoxEyeComponents stuff --
+----------------------------
+
 DROP TABLE IF EXISTS BoxEyeComponents.BoxEyeRigLog;
 DROP TABLE IF EXISTS BoxEyeComponents.ArduinoReaderLog;
 DROP TABLE IF EXISTS BoxEyeComponents.AntennaLog;
