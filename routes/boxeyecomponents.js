@@ -125,8 +125,18 @@ router.post("/insert2/antenna", function(req, res, next){
 });
 
 // Add an entry to a BoxEye rig's log.
-router.post("/append2/boxeyerig/:id", function(req, res, next){
+router.post("/append2log/boxeyerig/:id", function(req, res, next){
   appendToLog(req, res, "BoxEyeRig");
+});
+
+// Add an entry to an Arduino-reader's log.
+router.post("/append2log/arduinoreader/:id", function(req, res, next){
+  appendToLog(req, res, "ArduinoReader");
+});
+
+// Add an entry to an antenna's log.
+router.post("/append2log/antenna/:id", function(req, res, next){
+  appendToLog(req, res, "Antenna");
 });
 
 // Pass control on to the Uploader object.
