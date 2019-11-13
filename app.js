@@ -1,6 +1,6 @@
-/*
-Set up the login system.
-*/
+/*************************
+** SET UP LOG IN SYSTEM **
+*************************/
 
 // Login imports.
 const passport = require("passport");
@@ -29,9 +29,9 @@ passport.deserializeUser(function(id, cb) {
   });
 });
 
-/*
-This is where it all begins.
-*/
+/***************************
+** SET UP EVERYTHING ELSE **
+***************************/
 
 // Imports.
 const createError = require("http-errors");
@@ -59,7 +59,8 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 if(app.get("env") === "development") app.locals.pretty = true;
-// Un-commenting the following makes the HTML output readable in all cases.
+// Un-commenting the following makes the HTML output human-readable in all
+// cases. (Useful when debugging a non-local server.)
 app.locals.pretty = true;
 
 // Use application-level middleware for common functionality, including
